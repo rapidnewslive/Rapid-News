@@ -56,7 +56,7 @@ body {
 h1 { color:#d32f2f; }
 p { font-size:18px; }
 
-/* NEWS BOX */
+/* BOX */
 .news-box {
   margin-top:20px;
   padding:20px;
@@ -108,15 +108,38 @@ p { font-size:18px; }
 
 <img src="logo.png" class="logo">
 
-<button onclick="changeLang()">🌐 Change Language</button>
+<h1>Rapid News</h1>
+<p>Fast • Reliable • Breaking Updates Anytime</p>
 
-<h1 id="title">Rapid News</h1>
-<p id="desc">Fast • Reliable • Breaking Updates Anytime</p>
+<!-- ABOUT APP -->
+<div class="news-box">
 
-<h2>Latest News</h2>
-<div id="newsBox" class="news-box">No news added</div>
+<h2>About Rapid News App</h2>
 
-<a href="app.apk" class="btn" download>⬇️ Download APK</a>
+<p>
+Rapid News is a fast and reliable Telugu news application designed to deliver breaking news instantly.
+</p>
+
+<p>
+📢 Features:
+<br>• Latest Telugu News Updates  
+<br>• Fast & Smooth Performance  
+<br>• Live Updates Anytime  
+<br>• Simple & Easy Interface  
+</p>
+
+<p>
+Stay updated with real-time news anytime, anywhere with Rapid News.
+</p>
+
+</div>
+
+<!-- APK BUTTON -->
+<a href="YOUR_GOOGLE_DRIVE_LINK" class="btn">⬇️ Download APK</a>
+
+<p style="margin-top:10px; color:gray;">
+Version 1.0 | Size: 80MB
+</p>
 
 </div>
 
@@ -124,36 +147,6 @@ p { font-size:18px; }
 <div class="footer">
 © 2026 Rapid News
 </div>
-
-<script>
-
-/* LANGUAGE */
-let lang = "en";
-
-function changeLang() {
-if(lang === "en") {
-document.getElementById("title").innerText = "రాపిడ్ న్యూస్";
-document.getElementById("desc").innerText = "తాజా వార్తలు వెంటనే అందిస్తాము";
-lang = "te";
-} else {
-document.getElementById("title").innerText = "Rapid News";
-document.getElementById("desc").innerText = "Fast • Reliable • Breaking Updates Anytime";
-lang = "en";
-}
-}
-
-/* ADMIN NEWS LOAD */
-let data = JSON.parse(localStorage.getItem("latestNews"));
-
-if(data){
-document.getElementById("newsBox").innerHTML = `
-<h3>${data.title}</h3>
-<p>${data.summary}</p>
-<img src="${data.media}" width="300">
-`;
-}
-
-</script>
 
 </body>
 </html>
