@@ -19,13 +19,13 @@ body {
 
 .navbar a {
   color: white;
-  margin: 15px;
+  margin: 20px;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
 }
 
-/* BREAKING NEWS BAR */
+/* BREAKING NEWS */
 .ticker {
   background: red;
   color: white;
@@ -49,7 +49,7 @@ body {
 .container {
   background: white;
   padding: 40px;
-  margin: 80px auto;
+  margin: 60px auto;
   width: 85%;
   max-width: 900px;
   border-radius: 15px;
@@ -62,25 +62,39 @@ body {
   display: block;
   margin: 0 auto 20px auto;
   width: 350px;
-  filter: drop-shadow(0px 5px 15px rgba(0,0,0,0.7));
 }
 
+/* TEXT */
 h1 {
-  font-size: 50px;
+  font-size: 45px;
   color: #d32f2f;
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
   color: #444;
 }
 
-.badge {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: orange;
-  color: white;
-  border-radius: 20px;
+/* BUTTON */
+.btn {
+  display:inline-block;
+  padding:12px 25px;
+  margin-top:15px;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.download { background:#2196F3; }
+.app { background:#4CAF50; }
+
+/* NEWS */
+#news {
+  margin-top:20px;
+  font-size:20px;
+  font-weight:bold;
+  color:#333;
 }
 
 /* FOOTER */
@@ -110,15 +124,25 @@ p {
   <span>🔴 BREAKING NEWS: Rapid News App Launching Soon | Latest Updates Coming | Stay Tuned 🔥</span>
 </div>
 
-<!-- CONTENT -->
+<!-- MAIN -->
 <div class="container">
 
-  <img src="logo.png" class="logo">
+<img src="logo.png" class="logo">
 
-  <h1>Rapid News</h1>
-  <p>Fast • Reliable • Breaking Updates Anytime</p>
+<button onclick="changeLang()" style="padding:8px 15px; border:none; background:#333; color:white; border-radius:5px;">
+🌐 Change Language
+</button>
 
-  <div class="badge">🚀 Coming Soon</div>
+<h1 id="title">Rapid News</h1>
+
+<p id="desc">Fast • Reliable • Breaking Updates Anytime</p>
+
+<h2>Latest News</h2>
+<div id="news">Loading news...</div>
+
+<a href="#" class="btn app">📲 Download App</a>
+<br>
+<a href="app.apk" download class="btn download">⬇️ Download APK</a>
 
 </div>
 
@@ -126,6 +150,38 @@ p {
 <div class="footer">
   © 2026 Rapid News
 </div>
+
+<script>
+/* News Auto Change */
+const newsData = [
+"Breaking: AP Politics Latest Updates",
+"Big News: New Government Decisions Released",
+"Sports: India Wins Thrilling Match",
+"Technology: New Mobile Launch in India",
+"Local: Vijayawada City Updates"
+];
+
+let i = 0;
+setInterval(() => {
+document.getElementById("news").innerText = newsData[i];
+i = (i + 1) % newsData.length;
+}, 2000);
+
+/* Language Toggle */
+let lang = "en";
+
+function changeLang() {
+if(lang === "en") {
+document.getElementById("title").innerText = "రాపిడ్ న్యూస్";
+document.getElementById("desc").innerText = "వేగంగా, నమ్మకమైన వార్తలు మీకు అందిస్తాం";
+lang = "te";
+} else {
+document.getElementById("title").innerText = "Rapid News";
+document.getElementById("desc").innerText = "Fast • Reliable • Breaking Updates Anytime";
+lang = "en";
+}
+}
+</script>
 
 </body>
 </html>
