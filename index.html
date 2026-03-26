@@ -6,31 +6,28 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(120deg, #2196f3, #e3f2fd);
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
 /* NAVBAR */
 .navbar {
-  background: linear-gradient(to right, #000000, #434343);
+  background: rgba(0,0,0,0.8);
   padding: 15px;
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 .navbar a {
   color: white;
-  margin: 20px;
+  margin: 15px;
   text-decoration: none;
   font-size: 18px;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* TICKER */
-.ticker {
-  background: red;
-  color: white;
-  padding: 10px;
-  font-weight: bold;
+.navbar a:hover {
+  color: #ffd700;
 }
 
 /* MAIN */
@@ -38,51 +35,77 @@ body {
   background: white;
   padding: 40px;
   margin: 60px auto;
-  width: 85%;
-  max-width: 900px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 30px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 850px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.4);
   text-align: center;
+  animation: fadeIn 1s ease-in;
 }
 
 /* LOGO */
 .logo {
-  display: block;
-  margin: 0 auto 20px auto;
-  width: 300px;
+  width: 250px;
+  margin-bottom: 15px;
 }
 
-/* TEXT */
-h1 { color:#d32f2f; }
-p { font-size:18px; }
+/* TITLE */
+h1 {
+  color: #e53935;
+  font-size: 42px;
+}
 
-/* BOX */
-.news-box {
-  margin-top:20px;
-  padding:20px;
-  border:1px solid #ddd;
-  border-radius:10px;
+/* DESCRIPTION */
+.tagline {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.card {
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 /* BUTTON */
 .btn {
   display:inline-block;
-  padding:12px 25px;
-  margin-top:15px;
+  padding:14px 30px;
+  margin-top:20px;
   color:white;
   text-decoration:none;
-  border-radius:8px;
+  border-radius:30px;
   font-weight:bold;
-  background:#2196F3;
+  background: linear-gradient(45deg, #2196F3, #21CBF3);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
 .footer {
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 15px;
   background: #000;
   color: white;
   text-align: center;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 </style>
 
@@ -92,15 +115,10 @@ p { font-size:18px; }
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy</a>
-</div>
-
-<!-- BREAKING -->
-<div class="ticker">
-🔴 BREAKING NEWS: Rapid News App Launching Soon
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+  <a href="#">Privacy</a>
 </div>
 
 <!-- MAIN -->
@@ -109,41 +127,37 @@ p { font-size:18px; }
 <img src="logo.png" class="logo">
 
 <h1>Rapid News</h1>
-<p>Fast • Reliable • Breaking Updates Anytime</p>
+<p class="tagline">Fast • Reliable • Breaking Updates Anytime</p>
 
-<!-- ABOUT APP -->
-<div class="news-box">
+<div class="card">
 
-<h2>About Rapid News App</h2>
+<h2>📢 About Rapid News App</h2>
 
 <p>
-Rapid News is a fast and reliable Telugu news application designed to deliver breaking news instantly.
+Rapid News is a fast and reliable Telugu news app delivering breaking updates instantly.
 </p>
 
 <p>
-📢 Features:
-<br>• Latest Telugu News Updates  
-<br>• Fast & Smooth Performance  
-<br>• Live Updates Anytime  
-<br>• Simple & Easy Interface  
+✔ Latest Telugu News  
+✔ Fast Performance  
+✔ Live Updates  
+✔ Simple UI  
 </p>
 
 <p>
-Stay updated with real-time news anytime, anywhere with Rapid News.
+Stay updated anytime, anywhere.
 </p>
 
 </div>
 
-<!-- APK BUTTON -->
-<a href="YOUR_GOOGLE_DRIVE_LINK" class="btn">⬇️ Download APK</a>
+<a href="YOUR_GOOGLE_DRIVE_LINK" class="btn">⬇ Download APK</a>
 
-<p style="margin-top:10px; color:gray;">
+<p style="margin-top:10px; color:#ccc;">
 Version 1.0 | Size: 80MB
 </p>
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
 © 2026 Rapid News
 </div>
