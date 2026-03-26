@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+
+<style>
+body { font-family: Arial; padding:20px; }
+
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+button {
+  padding:10px 20px;
+  background:red;
+  color:white;
+  border:none;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Add Telugu News</h2>
+
+<label>Title (max 75 letters)</label>
+<input type="text" id="title" maxlength="75">
+
+<label>Summary (max 450 letters)</label>
+<textarea id="summary" maxlength="450"></textarea>
+
+<label>Image / Video URL</label>
+<input type="text" id="media">
+
+<button onclick="saveNews()">Save News</button>
+
+<script>
+function saveNews() {
+  let news = {
+    title: document.getElementById("title").value,
+    summary: document.getElementById("summary").value,
+    media: document.getElementById("media").value
+  };
+
+  localStorage.setItem("latestNews", JSON.stringify(news));
+  alert("News Saved!");
+}
+</script>
+
+</body>
+</html>
