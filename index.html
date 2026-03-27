@@ -5,100 +5,70 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  text-align: center;
-  background: linear-gradient(to right, #2196f3, #ffffff);
+  background: #f5f5f5;
 }
 
 /* Navbar */
 .navbar {
   background: #000;
-  padding: 15px;
-}
-
-.navbar a {
   color: white;
-  margin: 20px;
-  text-decoration: none;
+  padding: 15px;
+  font-size: 20px;
   font-weight: bold;
-}
-
-.navbar a:hover {
-  color: #ff9800;
 }
 
 /* Container */
 .container {
-  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* Logo */
-.logo {
-  width: 220px;
-  margin-bottom: 10px;
+/* News Card */
+.news-card {
+  display: flex;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.news-img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Content */
+.news-content {
+  padding: 15px;
 }
 
 /* Title */
-h1 {
-  color: #d32f2f;
-  font-size: 42px;
-  margin: 10px 0;
+.news-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Tagline */
-.tagline {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 25px;
-}
-
-/* Card */
-.card {
-  background: white;
-  max-width: 600px;
-  margin: auto;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-}
-
-/* List */
-.card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.card ul li {
-  margin: 10px 0;
-  font-size: 16px;
-}
-
-/* Button */
-.download-btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #2196f3;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.download-btn:hover {
-  background: #0b7dda;
-}
-
-.footer {
-  margin-top: 10px;
+/* Summary */
+.news-summary {
   color: #555;
+  font-size: 14px;
+}
+
+/* Date */
+.news-date {
+  font-size: 12px;
+  color: red;
+  margin-bottom: 5px;
 }
 
 </style>
@@ -106,57 +76,59 @@ h1 {
 
 <body>
 
-<!-- Navbar -->
 <div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-  <a href="privacy.html">Privacy</a>
+Rapid News
 </div>
 
-<div class="container">
+<div class="container" id="news"></div>
 
-<!-- Logo -->
-<img src="logo.png" class="logo">
+<script>
 
-<h1>Rapid News</h1>
+// Sample data (later Firebase connect cheddam)
+let newsData = [
+{
+title: "ఈ తీరుపై ఎన్నికల వరకు: రాజ్‌దీప్",
+summary: "పశ్చిమాసియా యుద్ధం నేపథ్యంలో కేంద్రం పాత్రపై విమర్శలు వెల్లువెత్తుతున్నాయి.",
+image: "https://via.placeholder.com/300",
+date: "March 27, 2026"
+},
+{
+title: "RCB vs SRH.. ప్లేయింగ్-11 ఇదే!",
+summary: "క్రికెట్ అభిమానులకు మంచి మ్యాచ్. రెండు జట్లు బలంగా ఉన్నాయి.",
+image: "https://via.placeholder.com/300",
+date: "March 27, 2026"
+}
+];
 
-<p class="tagline">
-Fast • Reliable • Breaking Updates Anytime
-</p>
+function loadNews() {
 
-<!-- Card -->
-<div class="card">
+let output = "";
 
-<h2>About Rapid News App</h2>
+newsData.forEach(data => {
 
-<p>
-Rapid News is a fast and reliable Telugu news app designed to deliver breaking news instantly.
-</p>
+output += `
+<div class="news-card">
 
-<ul>
-  <li><i class="fas fa-newspaper"></i> Latest Telugu News Updates</li>
-  <li><i class="fas fa-bolt"></i> Fast & Smooth Performance</li>
-  <li><i class="fas fa-broadcast-tower"></i> Live Updates Anytime</li>
-  <li><i class="fas fa-mobile-alt"></i> Simple & Easy Interface</li>
-</ul>
+<img src="${data.image}" class="news-img">
 
-<p>
-Stay updated with real-time news anytime, anywhere with Rapid News.
-</p>
-
+<div class="news-content">
+<div class="news-date">NEWS • ${data.date}</div>
+<div class="news-title">${data.title}</div>
+<div class="news-summary">${data.summary}</div>
 </div>
 
-<!-- Download -->
-<a href="app.apk" class="download-btn">
-<i class="fas fa-download"></i> Download APK
-</a>
-
-<p class="footer">
-Version 1.0 | Size: 80MB
-</p>
-
 </div>
+`;
+
+});
+
+document.getElementById("news").innerHTML = output;
+
+}
+
+loadNews();
+
+</script>
 
 </body>
 </html>
