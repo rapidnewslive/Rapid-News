@@ -4,10 +4,9 @@
 <title>Rapid News</title>
 
 <style>
-
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
@@ -21,15 +20,12 @@ body {
   background: linear-gradient(to right, #000, #1a1a1a);
 }
 
-/* LOGO */
 .logo-box img {
   height: 180px;
   margin-top: 10px;
-  object-fit: contain;
-  filter: drop-shadow(0px 0px 6px gold);
 }
 
-/* 🔥 BUTTON STYLE MENU */
+/* MENU BUTTONS */
 .menu a {
   color: white;
   text-decoration: none;
@@ -37,47 +33,40 @@ body {
   padding: 10px 18px;
   border-radius: 25px;
   font-weight: bold;
-  font-size: 15px;
   background: linear-gradient(45deg, #ff9800, #ff5722);
-  box-shadow: 0px 4px 15px rgba(255, 87, 34, 0.6);
   transition: 0.3s;
 }
 
-/* HOVER EFFECT */
 .menu a:hover {
   background: linear-gradient(45deg, #ffd700, #ff9800);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0px 6px 20px rgba(255, 152, 0, 0.9);
 }
 
-/* BREAKING BAR */
+/* BREAKING FIX */
 .breaking {
-  background: linear-gradient(90deg, red, darkred, red);
+  background: linear-gradient(90deg, red, darkred);
   color: white;
-  padding: 10px;
-  font-weight: bold;
+  padding: 12px 0;
   overflow: hidden;
-  position: relative;
+  white-space: nowrap;
 }
 
 .breaking span {
-  position: absolute;
-  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
   animation: scroll 12s linear infinite;
 }
 
 @keyframes scroll {
-  from { left: 100%; }
-  to { left: -100%; }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
-/* WRAPPER */
+/* CONTENT */
 .wrapper {
   max-width: 1200px;
   margin: auto;
 }
 
-/* CONTENT */
 .container {
   display: flex;
   gap: 20px;
@@ -87,18 +76,16 @@ body {
 .left { width: 70%; }
 .right { width: 30%; }
 
-/* FEATURED */
 .featured {
   background: white;
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
-  box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
 }
 
 .featured img {
   width: 100%;
-  height: 320px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -106,41 +93,27 @@ body {
   padding: 20px;
 }
 
-.featured h2 {
-  color: red;
-}
-
-/* NEWS CARD */
 .news-card {
   display: flex;
   background: white;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 15px;
-  overflow: hidden;
-  transition: 0.3s;
-  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
-}
-
-.news-card:hover {
-  transform: scale(1.02);
 }
 
 .news-card img {
-  width: 170px;
-  height: 110px;
+  width: 150px;
+  height: 100px;
   object-fit: cover;
 }
 
 .news-content {
-  padding: 12px;
+  padding: 10px;
 }
 
-/* SIDEBAR */
 .sidebar {
   background: white;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 25px rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
 
 </style>
@@ -148,26 +121,23 @@ body {
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
   <div class="logo-box">
     <img src="logo.png">
   </div>
 
   <div class="menu">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Privacy</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
   </div>
 </div>
 
-<!-- BREAKING -->
 <div class="breaking">
-  <span>🔥 Breaking: Latest Telugu News Updates Instantly 🚀 Stay Tuned</span>
+  <span>🔥 Breaking: Latest Telugu News Updates Instantly 🚀</span>
 </div>
 
-<!-- MAIN -->
 <div class="wrapper">
 <div class="container">
 
@@ -176,7 +146,7 @@ body {
 <div class="featured">
   <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
   <div class="featured-content">
-    <h2>Top Breaking News</h2>
+    <h2 style="color:red;">Top Breaking News</h2>
     <p>ఇది ప్రధాన వార్త. ఇది highlight అవుతుంది.</p>
   </div>
 </div>
