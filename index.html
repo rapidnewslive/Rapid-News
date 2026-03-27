@@ -13,41 +13,41 @@ body {
 
 /* NAVBAR */
 .navbar {
-  height: 90px; /* 🔥 fixed small navbar */
+  height: 100px;
   padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: linear-gradient(to right, #000, #1a1a1a);
-  position: relative;
-  z-index: 10;
 }
 
 /* LOGO */
-.logo-box {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
 .logo-box img {
-  height: 180px; /* 🔥 BIG LOGO */
-  margin-top: 25px; /* 🔥 overlap effect */
+  height: 180px;
+  margin-top: 10px;
   object-fit: contain;
-  filter: drop-shadow(0px 0px 10px gold);
+  filter: drop-shadow(0px 0px 6px gold);
 }
 
-/* MENU */
+/* 🔥 BUTTON STYLE MENU */
 .menu a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 10px;
+  padding: 10px 18px;
+  border-radius: 25px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  box-shadow: 0px 4px 15px rgba(255, 87, 34, 0.6);
+  transition: 0.3s;
 }
 
+/* HOVER EFFECT */
 .menu a:hover {
-  color: #ffcc00;
+  background: linear-gradient(45deg, #ffd700, #ff9800);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0px 6px 20px rgba(255, 152, 0, 0.9);
 }
 
 /* BREAKING BAR */
@@ -60,11 +60,10 @@ body {
   position: relative;
 }
 
-/* SCROLL TEXT */
 .breaking span {
   position: absolute;
   white-space: nowrap;
-  animation: scroll 10s linear infinite;
+  animation: scroll 12s linear infinite;
 }
 
 @keyframes scroll {
@@ -72,7 +71,7 @@ body {
   to { left: -100%; }
 }
 
-/* CENTER FIX */
+/* WRAPPER */
 .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -85,15 +84,8 @@ body {
   padding: 20px;
 }
 
-/* LEFT */
-.left {
-  width: 70%;
-}
-
-/* RIGHT */
-.right {
-  width: 30%;
-}
+.left { width: 70%; }
+.right { width: 30%; }
 
 /* FEATURED */
 .featured {
@@ -151,10 +143,6 @@ body {
   box-shadow: 0px 5px 25px rgba(0,0,0,0.3);
 }
 
-.sidebar h3 {
-  margin-top: 0;
-}
-
 </style>
 </head>
 
@@ -176,55 +164,41 @@ body {
 
 <!-- BREAKING -->
 <div class="breaking">
-  <span>🔥 Breaking: Latest Telugu News Updates Instantly 🚀 Stay Tuned For More Updates</span>
+  <span>🔥 Breaking: Latest Telugu News Updates Instantly 🚀 Stay Tuned</span>
 </div>
 
 <!-- MAIN -->
 <div class="wrapper">
-
 <div class="container">
 
-  <!-- LEFT -->
-  <div class="left">
+<div class="left">
 
-    <!-- FEATURED -->
-    <div class="featured">
-      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
-      <div class="featured-content">
-        <h2>Top Breaking News</h2>
-        <p>ఇది ప్రధాన వార్త. ఇది highlight అవుతుంది.</p>
-      </div>
-    </div>
-
-    <!-- NEWS -->
-    <div class="news-card">
-      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e">
-      <div class="news-content">
-        <h3>ఈ తీర్పు ఎన్నికల వరకు: రాజదీప్</h3>
-        <p>కేంద్రం పాలనపై విమర్శలు వెల్లువెత్తుతున్నాయి...</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
-      <div class="news-content">
-        <h3>RCB vs SRH.. ప్లేయింగ్-11 ఇదే!</h3>
-        <p>క్రికెట్ అభిమానులకు మంచి మ్యాచ్...</p>
-      </div>
-    </div>
-
+<div class="featured">
+  <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
+  <div class="featured-content">
+    <h2>Top Breaking News</h2>
+    <p>ఇది ప్రధాన వార్త. ఇది highlight అవుతుంది.</p>
   </div>
+</div>
 
-  <!-- RIGHT -->
-  <div class="right">
-    <div class="sidebar">
-      <h3>Featured News</h3>
-      <p>More updates coming soon...</p>
-    </div>
+<div class="news-card">
+  <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e">
+  <div class="news-content">
+    <h3>ఈ తీర్పు ఎన్నికల వరకు: రాజదీప్</h3>
+    <p>కేంద్రం పాలనపై విమర్శలు...</p>
   </div>
+</div>
 
 </div>
 
+<div class="right">
+  <div class="sidebar">
+    <h3>Featured News</h3>
+    <p>More updates coming soon...</p>
+  </div>
+</div>
+
+</div>
 </div>
 
 </body>
