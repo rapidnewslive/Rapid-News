@@ -13,16 +13,28 @@ body {
 
 /* NAVBAR */
 .navbar {
-  background: linear-gradient(to right, #000000, #1a1a1a);
+  height: 90px; /* 🔥 fixed small navbar */
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 50px;
+  background: linear-gradient(to right, #000, #1a1a1a);
+  position: relative;
+  z-index: 10;
 }
 
-/* LOGO BIG FIX */
+/* LOGO */
+.logo-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .logo-box img {
-  height: 210px; /* 🔥 BIG */
+  height: 210px; /* 🔥 BIG LOGO */
+  margin-top: 25px; /* 🔥 overlap effect */
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 10px gold);
 }
 
 /* MENU */
@@ -31,18 +43,36 @@ body {
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
+  font-size: 16px;
 }
 
-/* BREAKING */
+.menu a:hover {
+  color: #ffcc00;
+}
+
+/* BREAKING BAR */
 .breaking {
-  background: red;
+  background: linear-gradient(90deg, red, darkred, red);
   color: white;
   padding: 10px;
-  text-align: center;
   font-weight: bold;
+  overflow: hidden;
+  position: relative;
 }
 
-/* MAIN CENTER FIX */
+/* SCROLL TEXT */
+.breaking span {
+  position: absolute;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+/* CENTER FIX */
 .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -68,14 +98,15 @@ body {
 /* FEATURED */
 .featured {
   background: white;
-  border-radius: 12px;
+  border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
 }
 
 .featured img {
   width: 100%;
-  height: 300px;
+  height: 320px;
   object-fit: cover;
 }
 
@@ -87,30 +118,41 @@ body {
   color: red;
 }
 
-/* NEWS */
+/* NEWS CARD */
 .news-card {
   display: flex;
   background: white;
+  border-radius: 12px;
   margin-bottom: 15px;
-  border-radius: 10px;
   overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+}
+
+.news-card:hover {
+  transform: scale(1.02);
 }
 
 .news-card img {
-  width: 160px;
+  width: 170px;
   height: 110px;
   object-fit: cover;
 }
 
 .news-content {
-  padding: 10px;
+  padding: 12px;
 }
 
 /* SIDEBAR */
 .sidebar {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 25px rgba(0,0,0,0.3);
+}
+
+.sidebar h3 {
+  margin-top: 0;
 }
 
 </style>
@@ -134,10 +176,10 @@ body {
 
 <!-- BREAKING -->
 <div class="breaking">
-🔥 Breaking: Latest Telugu News Updates Instantly
+  <span>🔥 Breaking: Latest Telugu News Updates Instantly 🚀 Stay Tuned For More Updates</span>
 </div>
 
-<!-- WRAPPER (CENTER FIX) -->
+<!-- MAIN -->
 <div class="wrapper">
 
 <div class="container">
@@ -145,6 +187,7 @@ body {
   <!-- LEFT -->
   <div class="left">
 
+    <!-- FEATURED -->
     <div class="featured">
       <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
       <div class="featured-content">
@@ -153,11 +196,12 @@ body {
       </div>
     </div>
 
+    <!-- NEWS -->
     <div class="news-card">
       <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e">
       <div class="news-content">
         <h3>ఈ తీర్పు ఎన్నికల వరకు: రాజదీప్</h3>
-        <p>కేంద్రం పాలనపై విమర్శలు...</p>
+        <p>కేంద్రం పాలనపై విమర్శలు వెల్లువెత్తుతున్నాయి...</p>
       </div>
     </div>
 
@@ -165,7 +209,7 @@ body {
       <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">
       <div class="news-content">
         <h3>RCB vs SRH.. ప్లేయింగ్-11 ఇదే!</h3>
-        <p>క్రికెట్ అభిమానులకు...</p>
+        <p>క్రికెట్ అభిమానులకు మంచి మ్యాచ్...</p>
       </div>
     </div>
 
